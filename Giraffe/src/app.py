@@ -3,6 +3,7 @@
 # celebrity = input("Please enter a celebrity name: ")
 import datetime
 import math
+import string
 
 # f-strings
 
@@ -21,7 +22,7 @@ import math
 
 # List Functions
 # **************
-lucky_numbers = [42, 8, 15, 16, 23, 4]
+# lucky_numbers = [42, 8, 15, 16, 23, 4]
 
 # friends.extend(["Coral", "Roberto", "David"])
 # friends.append("Monty")
@@ -115,21 +116,82 @@ lucky_numbers = [42, 8, 15, 16, 23, 4]
 # print(get_max(21, 111, 3))
 
 # Advanced Calculator
-def calculate(num_one, num_two, op):
-    if op == "+":
-        print(num_one + num_two)
-    elif op == "-":
-        print(num_one - num_two)
-    elif op == "*":
-        print(num_one * num_two)
-    elif op == "/":
-        print(num_one / num_two)
+# def calculate(num_one, num_two, op):
+#     if op == "+":
+#         print(num_one + num_two)
+#     elif op == "-":
+#         print(num_one - num_two)
+#     elif op == "*":
+#         print(num_one * num_two)
+#     elif op == "/":
+#         print(num_one / num_two)
+#     else:
+#         print("Invalid operation")
+#
+#
+# num1 = float(input("Enter number 1: "))
+# operation = input("Enter operation: ")
+# num2 = float(input("Enter number 2: "))
+#
+# calculate(num1, num2, operation)
+
+
+# Dictionaries
+# ************
+# months = {
+#     "Jan": "January",
+#     "Feb": "February",
+#     "Mar": "March",
+#     "Apr": "April",
+#     "May": "May",
+#     "Jun": "June",
+#     "Jul": "July",
+#     "Aug": "August",
+#     "Sep": "September",
+#     "Oct": "October",
+#     "Nov": "November",
+#     "Dec": "December",
+# }
+#
+# print(months)
+# print(months["Oct"])
+# print(months.get("Sep"))
+#
+# # Second parameter is the default/fallback value that will be returned
+# # if the item with the given key doesn't exist.
+# print(months.get("Aad", "Not a valid key"))
+
+
+# while loops
+# ***********
+# count = 0
+#
+# while count < 5:
+#     stars = 0
+#
+#     while stars < count + 1:
+#         print("*", end='')  # end='' prevents addition of a line-break after printing '*'
+#         stars += 1
+#
+#     print("\r")
+#     count += 1
+
+
+# Guessing Game
+# *************
+secret_word = "Orange"
+guess_count = 0
+GUESS_LIMIT = 3
+
+while guess_count < GUESS_LIMIT:
+    guess = input("Please enter a string: ")
+
+    if guess.strip().lower() == secret_word.lower():
+        print(f"You guessed the secret word correctly. You win 🎉🎉🎉.")
+        break
+
+    guess_count += 1
+    if guess_count == GUESS_LIMIT:
+        print("You are out of guesses 😥😥😥.")
     else:
-        print("Invalid operation")
-
-
-num1 = float(input("Enter number 1: "))
-operation = input("Enter operation: ")
-num2 = float(input("Enter number 2: "))
-
-calculate(num1, num2, operation)
+        print(f"You have only {GUESS_LIMIT - guess_count} guesses left 🤔🤔🤔.")
