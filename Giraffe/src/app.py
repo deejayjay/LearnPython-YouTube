@@ -264,13 +264,14 @@ def translate(input_sentence):
 
     for letter in input_sentence:
         if letter in "aeiouAEIOU":
-            translation += 'g'
+            translation += "G" if letter.isupper() else "g"  # Ternary expression.
         else:
             translation += letter
 
     return translation
 
 
-print(translate('dog'))
-print(translate('rhythm'))
-print(translate('aeroplane'))
+print(f"dog => {translate('dog')}")
+print(f"rhythm => {translate('rhythm')}")
+print(f"aeroplane => {translate('aeroplane')}")
+print(f"Orbit => {translate("Orbit")}")
